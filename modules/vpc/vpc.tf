@@ -1,4 +1,3 @@
-#Creating Custom VPC
 resource "aws_vpc" "custom-vpc" {
 cidr_block = var.vpc_cidr_block
 instance_tenancy = "default"

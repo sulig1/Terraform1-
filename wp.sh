@@ -1,21 +1,19 @@
 #!/bin/bash
-# Update system packages
 dnf update -y
 
-# Install Docker
 dnf install -y docker
 systemctl enable --now docker
 
-# Install Docker Compose v2
+
 curl -SL https://github.com/docker/compose/releases/download/v2.24.6/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
-# Create project directory
+
 mkdir -p /home/ec2-user/wordpress
 cd /home/ec2-user/wordpress
 
-# Write docker-compose.yml
+
 cat > docker-compose.yml <<'EOF'
 services:
 
@@ -48,8 +46,8 @@ volumes:
   db:
 EOF
 
-# Give ec2-user ownership
+
 chown -R ec2-user:ec2-user /home/ec2-user/wordpress
 
-# Start containers
+
 /usr/local/bin/docker-compose up -d

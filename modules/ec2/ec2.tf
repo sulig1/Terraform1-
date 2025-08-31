@@ -1,4 +1,3 @@
-#Creating EC2 instance for Wordpress Deployment
 resource "aws_instance" "Wordpress-EC2" {
   ami           = var.ec2-ami
   instance_type = var.ec2-type

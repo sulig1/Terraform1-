@@ -26,17 +26,3 @@ module "ec2" {
 
 
 
-
-
-
-
-
-
-
-# module "security" {
-#   source = ".//modules/security"
-# }
-
-# module "ec2" {
-#   source = ".//modules/ec2"
-# }
